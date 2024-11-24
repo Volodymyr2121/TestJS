@@ -1,9 +1,17 @@
-const browser = prompt('Ввудіть назву браузера яким ви користуєтесь')
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes();
+//   else no();
+// }
 
-if (browser === "Edge") {
-  alert( "You've got the Edge!" )
-} else if (browser === "Chrome" ||browser === "Firefox" ||browser === "Safari" ||browser === "Opera") {
-  alert( 'Ми підтримуємо і ці браузери' );
-} else {
-  alert( 'Маємо надію, що ця сторінка виглядає добре!' );
+const ask = (question, yes, no) => {
+  if (confirm(question)) 
+    yes();
+   else  no();
 }
+
+ask(
+  "Ви згодні?",
+  ()=> { alert("Ви погодились."); },
+  ()=> { alert("Ви скасували виконання."); }
+);
+
