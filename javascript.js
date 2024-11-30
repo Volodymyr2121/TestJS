@@ -1,17 +1,17 @@
-// function ask(question, yes, no) {
-//   if (confirm(question)) yes();
-//   else no();
-// }
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function() { // показує поточний крок
+    alert(this.step);
+    return this;
+  }
+};
 
-const ask = (question, yes, no) => {
-  if (confirm(question)) 
-    yes();
-   else  no();
-}
-
-ask(
-  "Ви згодні?",
-  ()=> { alert("Ви погодились."); },
-  ()=> { alert("Ви скасували виконання."); }
-);
-
+ladder.up().up().down().showStep().down().up().showStep();
