@@ -1,36 +1,20 @@
 // 1
-function readNumber() {
-  let num;
-
-  do {
-    num = prompt("Введіть число", 0);
-  } while ( !isFinite(num) );
-
-  if (num === null || num === '') return null;
-
-  return +num;
+function ucFirst(str) {
+  
+  return str[0].toUpperCase() + str.slice(1)
 }
 
-alert(`Read: ${readNumber()}`);
-
+console.log(ucFirst("василь"));
 
 // 2
 
-function random( max) {
-  return  Math.random() * max;
+function checkSpam(str) {
+  const newStr =str.toLowerCase()
+  return newStr.includes("viagra") || newStr.includes("xxx")
 }
 
-console.log( random(5) );
-console.log( random(5) );
-console.log(random(5));
+console.log(checkSpam('buy ViAgRA now'))
+console.log(checkSpam('free xxxxx') )
+console.log(checkSpam("innocent rabbit"))
 
 // 3
-
-function randomInteger(min, max) {
-  const num = min + Math.random() * (max-min)
-  return Math.round(num)
-}
-
-console.log( randomInteger(1, 10) );
-console.log( randomInteger(1, 10) ); 
-console.log( randomInteger(1, 10) ); 
