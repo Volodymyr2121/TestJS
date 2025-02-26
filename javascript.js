@@ -18,3 +18,20 @@ console.log(checkSpam('free xxxxx') )
 console.log(checkSpam("innocent rabbit"))
 
 // 3
+function truncate(str, maxlength) {
+  let newStr = str.slice(0,maxlength - 1)
+  if (str.length > maxlength) {
+    return newStr + "..."
+  }
+  return str
+}
+
+console.log(truncate("Що я хотів би розповісти на цю тему:", 20))
+console.log(truncate("Всім привіт!", 20))
+
+// 4
+function extractCurrencyValue(str) {
+  return console.log(+str.slice(1))
+}
+
+extractCurrencyValue('$120')
