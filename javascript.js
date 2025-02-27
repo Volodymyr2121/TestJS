@@ -1,37 +1,57 @@
 // 1
-function ucFirst(str) {
-  
-  return str[0].toUpperCase() + str.slice(1)
-}
+const styles = ["Jazz", "Blues"];
+styles.push("Rock-n-Roll");
 
-console.log(ucFirst("василь"));
+console.log(styles);
+
+const medians = Math.round((styles.length) / 2);
+styles[medians - 1] = "Classics";
+
+console.log(styles);
+
+console.log(styles.shift());
+
+styles.unshift("Rap", "Reggae")
+console.log(styles)
 
 // 2
 
-function checkSpam(str) {
-  const newStr =str.toLowerCase()
-  return newStr.includes("viagra") || newStr.includes("xxx")
+function sumInput() {
+    let arr = [];
+    let sum = 0;
+   while (true) {
+       let userNum = prompt("Please enter number:");
+       
+       if(userNum === null || userNum.trim() === "" || isNaN(userNum)) break
+        arr.push(+userNum);
+   }
+
+    for (let element of arr) {
+     sum += element
+    }
+
+    return console.log(sum)
 }
 
-console.log(checkSpam('buy ViAgRA now'))
-console.log(checkSpam('free xxxxx') )
-console.log(checkSpam("innocent rabbit"))
+sumInput()
 
 // 3
-function truncate(str, maxlength) {
-  let newStr = str.slice(0,maxlength - 1)
-  if (str.length > maxlength) {
-    return newStr + "..."
+function getMaxSubSum(arr) {
+  let maxSum = 0;
+  let partialSum = 0;
+
+  for (let item of arr) { 
+    partialSum += item; 
+    maxSum = Math.max(maxSum, partialSum); 
+    if (partialSum < 0) partialSum = 0; 
   }
-  return str
+
+  return maxSum;
 }
 
-console.log(truncate("Що я хотів би розповісти на цю тему:", 20))
-console.log(truncate("Всім привіт!", 20))
-
-// 4
-function extractCurrencyValue(str) {
-  return console.log(+str.slice(1))
-}
-
-extractCurrencyValue('$120')
+console.log( getMaxSubSum([-1, 2, 3, -9]) );
+console.log( getMaxSubSum([-1, 2, 3, -9, 11]) );
+console.log( getMaxSubSum([-2, -1, 1, 2]) );
+console.log( getMaxSubSum([100, -9, 2, -3, 5]) );
+console.log( getMaxSubSum([1, 2, 3]) );
+console.log( getMaxSubSum([-1, -2, -3]) ); 
