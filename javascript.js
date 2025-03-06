@@ -34,3 +34,49 @@ console.log(arr)
 }
 
 filterRangeInPlace([5, 3, 8, 1], 1, 4);
+
+//4
+function copySorted(arr) {
+  const result = arr.slice().sort()
+  return console.log(result)
+}
+
+copySorted(["HTML", "JavaScript", "CSS"])
+
+//5
+
+const userArray = [{ name: "Іван", age: 25 },
+  { name: "Петро", age: 30 },
+  { name: "Марія", age: 28 }
+]
+
+function getNameArray() {
+  const result = userArray.map(user => user.name);
+
+return console.log(result)
+}
+getNameArray();
+
+//6
+const userArr = [{ name: "Іван", surname: "Іванко", id: 1 },
+  { name: "Петро", surname: "Петренко", id: 2 },
+  { name: "Марія", surname: "Мрійко", id: 3 }
+]
+
+
+
+  const result= userArr.map(item => ({
+    fullName: `${item.name} ${item.surname}`,
+    id: item.id,
+  }))
+
+console.log(result)
+
+//7
+const children = [{ name: "John", age: 25 },{ name: "Pete", age: 30 },{ name: "Mary", age: 29 }];
+
+const arr = children.reduce((prev, user) => prev + user.age, 0) / children.length;
+
+console.log(arr)
+
+//8
