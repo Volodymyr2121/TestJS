@@ -1,30 +1,38 @@
 //1
-function unique(arr) {
-  let newSet = new Set(arr);
-  return console.log(newSet);
+
+let user = {
+  name: "Іван",
+  years: 30
 };
 
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
+let { name, years: age, isAdmin = false } = user;
 
-unique(values)
+console.log( name );
+console.log( age );
+console.log(isAdmin);
 
 //2
 
-function aclean(arr) {
-  let obj = {};
+let salaries = {
+  "Іван": 100,
+  "Петро": 300,
+  "Марія": 250
+};
 
-  for (let i = 0; i < arr.length; i++) {
-    let sorted = arr[i].toLowerCase().split("").sort().join("");
-    obj[sorted] = arr[i];
+function topSalary(salaries) {
+
+  let maxSalary = 0;
+  let nameMax;
+
+  for (const [namme, salary] of Object.entries(salaries)) {
+    if (maxSalary < salary) {
+      maxSalary = salary;
+      nameMax = namme;
+    }
   }
+  
+return nameMax
+};
 
-  return Object.values(obj);
-}
+console.log(topSalary(salaries))
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-
-alert(aclean(arr));
-
-//3
